@@ -6,6 +6,7 @@ public class Circle : Shape
     public Circle(string color, double radius):base(color)
     {
         _radius = radius;
+        SetName("Circle");
     }
     public override double GetArea()
     {

@@ -8,7 +8,9 @@ public class Rectangle : Shape
     {
         _length = length;
         _width = width;
+        SetName("Rectangle");
     }
+
     public override double GetArea()
     {
         return _length * _width;
