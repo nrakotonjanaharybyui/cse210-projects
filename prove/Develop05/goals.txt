@@ -1,0 +1,6 @@
+340
+SimpleGoal|Give a talk|Speak in sacrament meeting when asked|100|True
+EternalGoal|Study the scriptures|Study for at least 10 minutes|50|0
+CheckListGoal|Attend the Temple|Attend and perform any ordinance|50|500|0|3|False
+CheckListGoal|Run|Run 5 miles|30|100|3|3|True
+SimpleGoal|Contact friend|Contact an old friend|50|True
