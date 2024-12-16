@@ -20,8 +20,24 @@ public class SideHustlle : Income
     }
 
     // Public Setters
-    public void SetDate(DateTime date)
+    public override void SetDate(DateTime date)
     {
         _date = date;
+    }
+
+    // Serializer
+    public override string Serialize()
+    {
+        return $"SideHustle,{base.GetName()},{base.GetDescription()},{base.GetValue()},{_date}";
+    }
+
+    public override void SetStartDate(DateTime startDate)
+    {
+       return;
+    }
+
+    public override void SetEndDate(DateTime endDate)
+    {
+        return;
     }
 }

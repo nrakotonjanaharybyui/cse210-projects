@@ -50,4 +50,13 @@ public abstract class Expense
     {
         _description = description;
     }
+
+    // Serializer and other abstract
+    public abstract string Serialize();
+    public abstract void SetDate(DateTime date);
+
+    public abstract void SetStartDate(DateTime startDate);
+
+    public abstract void SetEndDate(DateTime endDate);
+    
 }

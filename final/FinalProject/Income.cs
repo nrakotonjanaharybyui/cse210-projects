@@ -35,6 +35,8 @@ public abstract class Income
         return $"{_name}:\n{_description}";
     }
 
+
+
     // Public Setters
     public void SetValue(float value)
     {
@@ -51,4 +53,12 @@ public abstract class Income
         _description = description;
     }
 
+
+    // Serializer and other abstract
+    public abstract string Serialize();
+    public abstract void SetDate(DateTime date);
+
+    public abstract void SetStartDate(DateTime startDate);
+
+    public abstract void SetEndDate(DateTime endDate);
 }

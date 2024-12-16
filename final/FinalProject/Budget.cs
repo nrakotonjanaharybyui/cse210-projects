@@ -4,9 +4,9 @@ public class Budget
 {
     private string _name;
     private string _description;
-    private List<Expense> _expenses;
-    private List<Income> _incomes;
-    private List<Investment> _investments;
+    public List<Expense> _expenses;
+    public  List<Income> _incomes;
+    public List<Investment> _investments;
     private DateTime _startDate;
     private DateTime _endDate;
 
@@ -59,7 +59,37 @@ public class Budget
         return _endDate;
     }
 
+    public float GetTotalExpenses()
+    {
+        float total = 0;
+        foreach(Expense exp in _expenses)
+        {
+            total += exp.GetValue();
+        }
 
+        foreach(Investment inv in _investments)
+        {
+            total += inv.GetValue();
+        }
+        return total;
+    }
+
+    public float GetTotalIncome()
+    {
+        float total = 0;
+        foreach(Income inv in _incomes)
+        {
+            total += inv.GetValue();
+        }
+        return total;
+    }
+    
+    // Serializer
+    public string Serialize()
+    {
+        return $"Budget,{_name},{_description},{_startDate.ToString()},{_endDate.ToString()}";
+    }
+    
     // Setter Methods
     public void SetName(string name)
     {

@@ -1,0 +1,8 @@
+Budget,Main 2025,My main budget for year 2025,12/15/2024 6:32:13 PM,12/15/2025 6:32:13 PM
+Salary,Custodial Salary,Custodial salary at BYU Idaho,600,1/1/2025 12:00:00 AM,4/30/2025 12:00:00 AM
+SideHustle,Yard Clean,Clean a friend's backyard,60,12/15/2024 6:59:45 PM
+FixedExpense,Housing Rent,Rent at Hollow Shades Apartments,925,1/1/2025 12:00:00 AM,1/5/2025 12:00:00 AM
+VariableExpense,Walmart,Shoping groceries at Walmart,80,12/15/2024 7:00:13 PM
+FixedExpense,Netflix,VOD subscription,12.5,11/10/2024 12:00:00 AM,11/10/2025 12:00:00 AM
+FixedExpense,SparkLite,High speed internet subscription,35.4,12/15/2024 9:29:59 PM,12/15/2024 9:30:00 PM
+Investment,Capital One,Saving investment,600,0.05,12/15/2024 6:58:48 PM

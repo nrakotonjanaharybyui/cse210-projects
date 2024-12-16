@@ -10,7 +10,6 @@ public class Salary:Income
         _endDate = endDate;
     }
 
-
     // Public Getters
     public DateTime GetStartDate()
     {
@@ -29,14 +28,25 @@ public class Salary:Income
 
 
     // Public Setters
-    public void SetStartDate(DateTime startDate)
+    public override void SetStartDate(DateTime startDate)
     {
         _startDate = startDate;
     }
 
-    public void SetEndDate(DateTime endDate)
+    public override void SetEndDate(DateTime endDate)
     {
         _endDate = endDate;
     }
 
+
+    // Seerializer
+    public override string Serialize()
+    {
+        return $"Salary,{base.GetName()},{base.GetDescription()},{base.GetValue()},{_startDate},{_endDate}";
+    }
+
+    public override void SetDate(DateTime date)
+    {
+        return;
+    }
 }

@@ -26,10 +26,6 @@ public class Investment : Expense
         return _endDate;
     }
 
-    public float GetMonthlyPayment()
-    {
-        return _monthlyPayment;
-    }
 
     public float GetRate()
     {
@@ -41,10 +37,6 @@ public class Investment : Expense
         return _checkOutValue;
     }
 
-    public List<VariableExpense> GetAdditionalPayments()
-    {
-        return _additionalPayments;
-    }
 
     public override string GetDisplay()
     {
@@ -58,12 +50,12 @@ public class Investment : Expense
 
 
     // Public Setters
-    public void SetStartDate(DateTime startDate)
+    public override void SetStartDate(DateTime startDate)
     {
         _startDate = startDate;
     }
 
-    public void SetEndDate(DateTime endDate)
+    public override void SetEndDate(DateTime endDate)
     {
         _endDate = endDate;
     }
@@ -71,6 +63,17 @@ public class Investment : Expense
     public void SetInterestRate(float rate)
     {
         _interestRate = rate;
+        _checkOutValue = base.GetValue() * (float)Math.Pow((float)Math.E,_interestRate);
     }
 
+    // Serializer
+    public override string Serialize()
+    {
+        return $"Investment,{base.GetName()},{base.GetDescription()},{base.GetValue()},{_interestRate},{_startDate}";
+    }
+
+    public override void SetDate(DateTime date)
+    {
+        throw new NotImplementedException();
+    }
 }

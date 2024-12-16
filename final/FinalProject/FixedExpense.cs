@@ -26,13 +26,24 @@ public class FixedExpense : Expense
 
 
     // Public Setters
-    public void SetStartDate(DateTime startDate)
+    public override void SetStartDate(DateTime startDate)
     {
         _startDate = startDate;
     }
 
-    public void SetEndDate(DateTime endDate)
+    public override void SetEndDate(DateTime endDate)
     {
         _endDate = endDate;
+    }
+
+    // Serializer
+    public override string Serialize()
+    {
+        return $"FixedExpense,{base.GetName()},{base.GetDescription()},{base.GetValue()},{_startDate},{_endDate}";
+    }
+
+    public override void SetDate(DateTime date)
+    {
+        return;
     }
 }

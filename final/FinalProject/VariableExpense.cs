@@ -19,9 +19,26 @@ public class VariableExpense : Expense
         return $"Variable Expense {base.GetDisplay()}\n{base.GetValue()} - {_date.ToString("MM/dd/yyyy")}";
     }
 
-    // Public Setters
-    public void SetDate(DateTime date)
+   
+    
+    // Serializer
+    public override string Serialize()
+    {
+        return $"VariableExpense,{base.GetName()},{base.GetDescription()},{base.GetValue()},{_date}";
+    }
+
+    public override void SetDate(DateTime date)
     {
         _date = date;
+    }
+
+    public override void SetEndDate(DateTime endDate)
+    {
+        return;
+    }
+
+    public override void SetStartDate(DateTime startDate)
+    {
+        return;
     }
 }
