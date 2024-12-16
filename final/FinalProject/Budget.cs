@@ -18,6 +18,9 @@ public class Budget
         _description = description;
         _startDate = DateTime.Now;
         _endDate = _startDate.AddYears(1);
+        _expenses = [];
+        _incomes = [];
+        _investments = [];
     }
 
     // Getters
@@ -56,10 +59,6 @@ public class Budget
         return _endDate;
     }
 
-    public string GetDisplay()
-    {
-        return "Displaying Budget";
-    }
 
     // Setter Methods
     public void SetName(string name)

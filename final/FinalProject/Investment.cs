@@ -2,20 +2,17 @@ public class Investment : Expense
 {
     private DateTime _startDate;
     private DateTime _endDate;
-    private float _monthlyPayment;
     private float _interestRate;
     private float _checkOutValue;
-    private List<VariableExpense> _additionalPayments;
-    
+
+
     // Constructor
-    public Investment(float value, string name, string description, DateTime startDate, DateTime endDate, float monthlyPayment, float rate) : base(value, name, description)
+    public Investment(float value, string name, string description, DateTime startDate, float rate) : base(value, name, description)
     {
         _startDate = startDate;
-        _endDate = endDate;
-        _monthlyPayment = monthlyPayment;
+        _endDate = startDate.AddYears(1);
         _interestRate = rate;
-
-        // TODO At creation, the final checkout value should be calculated based on value, rate, and investment duration    6./
+        _checkOutValue = value * (float)Math.Pow((float)Math.E,_interestRate);
     }
 
     // Public Getters
@@ -49,6 +46,16 @@ public class Investment : Expense
         return _additionalPayments;
     }
 
+    public override string GetDisplay()
+    {
+        string h_value = GetCheckOutValue().ToString("0.00");
+        string i_value = base.GetValue().ToString("0.00");
+        string start_d = _startDate.ToString("MM/dd/yyyy");
+        string end_d = _endDate.ToString("MM/dd/yyyy");
+        return $"Investment {base.GetDisplay()}\nStarting value: {i_value}, on {start_d}\nFinal value: {h_value}, on {end_d}";
+    }
+
+
 
     // Public Setters
     public void SetStartDate(DateTime startDate)
@@ -61,30 +68,9 @@ public class Investment : Expense
         _endDate = endDate;
     }
 
-    public void SetMonthlyPayment(float value)
-    {
-        _monthlyPayment = value;
-    }
-
     public void SetInterestRate(float rate)
     {
         _interestRate = rate;
     }
 
-    public void AddAdditionalPayment(VariableExpense expense)
-    {
-        _additionalPayments.Add(expense);
-        // TODO For every Additional payment, the final check out value should be updated
-    }
-
-    private void UpdateCheckOutValue()
-    {
-        _checkOutValue = base.GetValue();
-        foreach(VariableExpense expense in _additionalPayments)
-        {
-            _checkOutValue += expense.GetValue();
-        }
-
-        // TODO: implement calculation to take in account interest rate and duration of investment
-    }
 }

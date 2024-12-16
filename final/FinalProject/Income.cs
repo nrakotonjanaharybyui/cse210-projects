@@ -30,6 +30,11 @@ public abstract class Income
         return _description;
     }
 
+    public virtual string GetDisplay()
+    {
+        return $"{_name}:\n{_description}";
+    }
+
     // Public Setters
     public void SetValue(float value)
     {

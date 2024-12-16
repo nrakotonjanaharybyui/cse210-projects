@@ -14,6 +14,11 @@ public class VariableExpense : Expense
         return _date;
     }
 
+    public override string GetDisplay()
+    {
+        return $"Variable Expense {base.GetDisplay()}\n{base.GetValue()} - {_date.ToString("MM/dd/yyyy")}";
+    }
+
     // Public Setters
     public void SetDate(DateTime date)
     {

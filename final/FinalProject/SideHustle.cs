@@ -13,6 +13,11 @@ public class SideHustlle : Income
     {
         return _date;
     }
+    
+    public override string GetDisplay()
+    {
+        return $"Side Income {base.GetDisplay()}\n{base.GetValue()} - {_date.ToString("MM/dd/yyyy")}";
+    }
 
     // Public Setters
     public void SetDate(DateTime date)

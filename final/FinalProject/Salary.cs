@@ -22,6 +22,11 @@ public class Salary:Income
         return _endDate;
     }
 
+    public override string GetDisplay()
+    {
+        return $"Salary {base.GetDisplay()}\n{base.GetValue()} from {_startDate.ToString("MM/dd/yyyy")} to {_endDate.ToString("MM/dd/yyyy")}";
+    }
+
 
     // Public Setters
     public void SetStartDate(DateTime startDate)
